@@ -1,0 +1,116 @@
+/* SymposiumCommitteeSection.css - Epic Purple/Pink Neon Theme */
+
+.symposium-committee-section {
+    padding: var(--space-20) 0;
+    background: var(--bg-secondary);
+    border-top: 1px solid rgba(168, 85, 247, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background glow effect */
+.symposium-committee-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 50% 30% at 50% 0%, rgba(168, 85, 247, 0.06), transparent),
+        radial-gradient(ellipse 40% 30% at 20% 80%, rgba(236, 72, 153, 0.04), transparent),
+        radial-gradient(ellipse 40% 30% at 80% 80%, rgba(168, 85, 247, 0.04), transparent);
+    pointer-events: none;
+}
+
+/* Top border glow line */
+.symposium-committee-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #a855f7, #ec4899, #a855f7, transparent);
+}
+
+.committee-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+    position: relative;
+}
+
+.header-badge {
+    display: inline-block;
+    margin-bottom: var(--space-4);
+}
+
+.header-badge span {
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: #ec4899;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: var(--space-2) var(--space-5);
+    background: rgba(236, 72, 153, 0.12);
+    border: 1px solid rgba(236, 72, 153, 0.35);
+    border-radius: var(--radius-full);
+}
+
+.committee-header .section-subtitle {
+    color: var(--text-secondary);
+    font-size: var(--text-lg);
+    max-width: 500px;
+    margin: var(--space-3) auto 0;
+}
+
+.text-gradient-purple {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f472b6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Grid Layout - 4 cards per row on desktop */
+.committee-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+@media (min-width: 640px) {
+    .committee-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-5);
+    }
+}
+
+@media (min-width: 768px) {
+    .committee-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .committee-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .committee-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .committee-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .committee-grid>* {
+        max-width: 280px;
+    }
+}

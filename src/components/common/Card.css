@@ -1,0 +1,21 @@
+.card-no-hover:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--border-subtle);
+}
+
+.card-padding-sm {
+    padding: var(--space-4);
+}
+
+.card-padding-md {
+    padding: var(--space-6);
+}
+
+.card-padding-lg {
+    padding: var(--space-8);
+}
+
+.card-padding-none {
+    padding: 0;
+}

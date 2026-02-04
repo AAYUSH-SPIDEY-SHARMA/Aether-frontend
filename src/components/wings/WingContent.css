@@ -1,0 +1,1053 @@
+/* ================================================
+   WING CONTENT - EPIC HUD-STYLE STYLING
+   High-tech coordinator cards with themed effects
+   ================================================ */
+
+/* ==================== BASE ==================== */
+.wing-content {
+    position: relative;
+}
+
+/* ==================== HEADER ==================== */
+.wing-header-section {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.wing-icon-badge {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+.wing-icon-badge--large {
+    width: 150px;
+    height: 150px;
+    border-radius: 24px;
+}
+
+.wing-header-logo {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.wing-content--fire .wing-icon-badge {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.15) 0%, rgba(168, 85, 247, 0.1) 100%);
+    color: #00f0ff;
+    border: 2px solid rgba(0, 240, 255, 0.4);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.3), 0 0 60px rgba(168, 85, 247, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.wing-content--climate .wing-icon-badge {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(34, 197, 94, 0.1) 100%);
+    color: #22c55e;
+    border: 2px solid rgba(16, 185, 129, 0.4);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+}
+
+.icon-pulse {
+    position: absolute;
+    inset: -4px;
+    border-radius: 20px;
+    border: 2px solid currentColor;
+    opacity: 0.3;
+    animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+}
+
+.wing-main-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.wing-tagline {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ==================== ABOUT ==================== */
+.wing-about {
+    max-width: 800px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.wing-description {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.wing-mission {
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+/* ==================== FOCUS PILLS ==================== */
+.wing-focus-section {
+    margin-bottom: 60px;
+}
+
+.wing-section-label {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 20px;
+}
+
+.focus-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.focus-pill {
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.wing-content--fire .focus-pill {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.15) 0%, rgba(168, 85, 247, 0.1) 100%);
+    border: 1px solid rgba(0, 240, 255, 0.4);
+    color: #00f0ff;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.15), inset 0 0 15px rgba(0, 240, 255, 0.05);
+    backdrop-filter: blur(8px);
+}
+
+.wing-content--fire .focus-pill:hover {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.25) 0%, rgba(168, 85, 247, 0.15) 100%);
+    border-color: rgba(0, 240, 255, 0.8);
+    color: #fff;
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.4), 0 8px 30px rgba(168, 85, 247, 0.2);
+    transform: translateY(-3px) scale(1.02);
+}
+
+.wing-content--climate .focus-pill {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.25) 0%, rgba(34, 197, 94, 0.15) 100%);
+    border: 2px solid rgba(34, 197, 94, 0.6);
+    color: #4ade80;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.2), inset 0 0 10px rgba(16, 185, 129, 0.1);
+}
+
+.wing-content--climate .focus-pill:hover {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.4) 0%, rgba(34, 197, 94, 0.25) 100%);
+    border-color: rgba(34, 197, 94, 0.9);
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.5), inset 0 0 15px rgba(16, 185, 129, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ==================== SECTION TITLES ==================== */
+.wing-section-title {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.wing-content--fire .accent-text {
+    background: linear-gradient(135deg, #00f0ff 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.wing-content--climate .accent-text {
+    color: #22c55e;
+}
+
+/* ==================== EPIC COORDINATOR CARDS ==================== */
+.wing-coordinators-section {
+    margin-bottom: 80px;
+}
+
+.coordinators-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+/* Epic Card */
+.coord-card-epic {
+    position: relative;
+    width: 280px;
+    background: linear-gradient(135deg,
+            rgba(10, 10, 15, 0.95) 0%,
+            rgba(15, 15, 25, 0.9) 100%);
+    border-radius: 20px;
+    overflow: visible;
+    transition: all 0.4s ease;
+}
+
+.coord-card-epic:hover {
+    transform: translateY(-8px);
+}
+
+/* Fire Border Container */
+.coord-fire-border {
+    position: absolute;
+    inset: -4px;
+    border-radius: 24px;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Individual Flames */
+.flame {
+    position: absolute;
+    bottom: -10px;
+    width: 30px;
+    height: 60px;
+    border-radius: 50% 50% 20% 20%;
+    filter: blur(3px);
+    animation: flicker 0.5s ease-in-out infinite alternate;
+}
+
+.wing-content--fire .flame {
+    background: linear-gradient(0deg,
+            #00f0ff 0%,
+            #00d4ff 30%,
+            #a855f7 60%,
+            #c084fc 80%,
+            transparent 100%);
+}
+
+.wing-content--fire .flame--1 {
+    left: 10%;
+    height: 50px;
+    animation-delay: 0s;
+    opacity: 0.9;
+}
+
+.wing-content--fire .flame--2 {
+    left: 30%;
+    height: 70px;
+    animation-delay: 0.1s;
+    opacity: 0.85;
+}
+
+.wing-content--fire .flame--3 {
+    left: 50%;
+    height: 80px;
+    animation-delay: 0.2s;
+    opacity: 0.95;
+    transform: translateX(-50%);
+}
+
+.wing-content--fire .flame--4 {
+    right: 30%;
+    height: 65px;
+    animation-delay: 0.15s;
+    opacity: 0.8;
+}
+
+.wing-content--fire .flame--5 {
+    right: 10%;
+    height: 55px;
+    animation-delay: 0.25s;
+    opacity: 0.9;
+}
+
+@keyframes flicker {
+    0% {
+        transform: scaleY(1) scaleX(1) translateY(0);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scaleY(1.1) scaleX(0.9) translateY(-5px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scaleY(0.9) scaleX(1.1) translateY(2px);
+        opacity: 0.7;
+    }
+}
+
+/* Fire Theme Card - Now Cyan/Purple */
+.wing-content--fire .coord-card-epic {
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    background: linear-gradient(135deg,
+            rgba(0, 240, 255, 0.05) 0%,
+            rgba(10, 10, 20, 0.95) 50%,
+            rgba(168, 85, 247, 0.05) 100%);
+    box-shadow:
+        0 4px 40px rgba(0, 240, 255, 0.15),
+        0 0 60px rgba(168, 85, 247, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.wing-content--fire .coord-card-epic:hover {
+    border-color: rgba(0, 240, 255, 0.6);
+    box-shadow:
+        0 8px 60px rgba(0, 240, 255, 0.3),
+        0 0 80px rgba(168, 85, 247, 0.15);
+}
+
+.wing-content--fire .coord-card-epic:hover .flame {
+    animation-duration: 0.3s;
+    filter: blur(2px);
+}
+
+/* Climate Theme - Leaf particles instead */
+.wing-content--climate .coord-fire-border {
+    display: none;
+}
+
+.wing-content--climate .coord-card-epic {
+    border: 2px solid rgba(16, 185, 129, 0.2);
+    box-shadow: 0 4px 40px rgba(16, 185, 129, 0.1);
+}
+
+.wing-content--climate .coord-card-epic:hover {
+    border-color: rgba(16, 185, 129, 0.5);
+    box-shadow: 0 8px 60px rgba(16, 185, 129, 0.25);
+}
+
+/* HUD Frame Corners */
+.coord-hud-frame {
+    position: absolute;
+    inset: 8px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.hud-corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-style: solid;
+    border-width: 2px;
+    opacity: 0.5;
+}
+
+.wing-content--fire .hud-corner {
+    border-color: #00f0ff;
+}
+
+.wing-content--climate .hud-corner {
+    border-color: #22c55e;
+}
+
+.hud-corner--tl {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 8px 0 0 0;
+}
+
+.hud-corner--tr {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 0 8px 0 0;
+}
+
+.hud-corner--bl {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+    border-radius: 0 0 0 8px;
+}
+
+.hud-corner--br {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 8px 0;
+}
+
+/* Status Badge for Wing Coordinators */
+.coord-status-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: rgba(10, 10, 15, 0.9);
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    border-radius: 100px;
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #00d4ff;
+    backdrop-filter: blur(8px);
+}
+
+.coord-status-badge .status-dot {
+    width: 6px;
+    height: 6px;
+    background: currentColor;
+    border-radius: 50%;
+    animation: statusPulse 2s ease-in-out infinite;
+    box-shadow: 0 0 8px currentColor;
+}
+
+.badge-wnc {
+    color: #00d4ff;
+    border-color: rgba(0, 212, 255, 0.5);
+}
+
+.badge-cro {
+    color: #10b981;
+    border-color: rgba(16, 185, 129, 0.5);
+}
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(0.8);
+    }
+}
+
+/* Profile Image Area */
+.coord-image-area {
+    position: relative;
+    aspect-ratio: 14 / 15;
+    /* Match coordinator crop preset (280x300) */
+    overflow: hidden;
+}
+
+.coord-image-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            transparent 50%);
+}
+
+.image-scanline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, currentColor, transparent);
+    opacity: 0.3;
+    animation: scanDown 4s linear infinite;
+}
+
+.wing-content--fire .image-scanline {
+    color: #00f0ff;
+}
+
+.wing-content--climate .image-scanline {
+    color: #22c55e;
+}
+
+@keyframes scanDown {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.3;
+    }
+
+    90% {
+        opacity: 0.3;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+.coord-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.coord-avatar-large {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+.wing-content--fire .coord-avatar-large {
+    background: linear-gradient(135deg, #ff4500 0%, #ff6b35 50%, #ffa500 100%);
+    box-shadow: 0 0 40px rgba(255, 69, 0, 0.4);
+}
+
+.wing-content--climate .coord-avatar-large {
+    background: linear-gradient(135deg, #10b981 0%, #22c55e 50%, #14b8a6 100%);
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.4);
+}
+
+/* Diagonal Badge - FLAMING BLADE Design */
+.coord-diagonal-badge {
+    position: absolute;
+    bottom: 20px;
+    right: -25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 40px 10px 20px;
+    transform: rotate(-45deg);
+    font-size: 8px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #fff;
+    z-index: 10;
+    text-shadow: 0 0 10px currentColor;
+}
+
+/* Fire Theme - Intense Flaming Blade */
+.wing-content--fire .coord-diagonal-badge {
+    background: linear-gradient(90deg,
+            #8B0000 0%,
+            #DC143C 20%,
+            #ff4500 40%,
+            #ff6b35 60%,
+            #ffa500 80%,
+            #FFD700 100%);
+    background-size: 200% 100%;
+    animation: fireBladeFlow 1.5s ease-in-out infinite;
+    clip-path: polygon(0% 50%,
+            8% 0%,
+            100% 0%,
+            95% 50%,
+            100% 100%,
+            8% 100%);
+    box-shadow:
+        0 0 15px rgba(255, 69, 0, 0.8),
+        0 0 30px rgba(255, 69, 0, 0.5),
+        0 0 45px rgba(255, 140, 0, 0.3),
+        inset 0 0 20px rgba(139, 0, 0, 0.5);
+}
+
+.wing-content--fire .coord-diagonal-badge::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 200, 0, 0.4) 50%,
+            transparent 100%);
+    background-size: 200% 100%;
+    animation: fireBladeGlow 1s ease-in-out infinite;
+    clip-path: polygon(0% 50%,
+            8% 0%,
+            100% 0%,
+            95% 50%,
+            100% 100%,
+            8% 100%);
+    z-index: -1;
+    filter: blur(4px);
+}
+
+.wing-content--fire .coord-diagonal-badge::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 10%;
+    right: 10%;
+    height: 6px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 100, 0, 0.8),
+            rgba(255, 200, 0, 0.6),
+            transparent);
+    filter: blur(3px);
+    animation: flameWave 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes fireBladeFlow {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes fireBladeGlow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        background-position: -100% 50%;
+    }
+
+    50% {
+        opacity: 1;
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes flameWave {
+    0% {
+        transform: translateX(-5px) scaleY(0.8);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateX(5px) scaleY(1.2);
+        opacity: 1;
+    }
+}
+
+/* Climate Theme - Nature Blade */
+.wing-content--climate .coord-diagonal-badge {
+    background: linear-gradient(90deg,
+            #064E3B 0%,
+            #047857 30%,
+            #10b981 50%,
+            #22c55e 70%,
+            #4ade80 100%);
+    background-size: 200% 100%;
+    animation: natureBladePulse 2s ease-in-out infinite;
+    clip-path: polygon(0% 50%,
+            8% 0%,
+            100% 0%,
+            95% 50%,
+            100% 100%,
+            8% 100%);
+    box-shadow:
+        0 0 15px rgba(16, 185, 129, 0.6),
+        0 0 30px rgba(34, 197, 94, 0.4);
+}
+
+@keyframes natureBladePulse {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.coord-diagonal-badge span:first-child {
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+}
+
+/* Data Panel */
+.coord-data-panel {
+    position: relative;
+    padding: 12px 16px;
+    text-align: center;
+}
+
+.data-line {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+}
+
+.wing-content--fire .data-line {
+    background: linear-gradient(90deg, transparent, rgba(255, 69, 0, 0.4), transparent);
+}
+
+.wing-content--climate .data-line {
+    background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.4), transparent);
+}
+
+.coord-name-epic {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.coord-role-epic {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+}
+
+.wing-content--fire .coord-role-epic {
+    color: #ff6b35;
+}
+
+.wing-content--climate .coord-role-epic {
+    color: #22c55e;
+}
+
+.coord-program-epic {
+    display: block;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Floating Social Icons */
+.coord-social-float {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 20px 20px;
+}
+
+.social-float-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.wing-content--fire .social-float-btn:hover {
+    background: rgba(255, 69, 0, 0.2);
+    border-color: rgba(255, 69, 0, 0.5);
+    color: #ff6b35;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.3);
+}
+
+.wing-content--climate .social-float-btn:hover {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: rgba(16, 185, 129, 0.5);
+    color: #22c55e;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Status Indicator */
+.coord-status {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+    z-index: 10;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    animation: statusPulse 2s ease-in-out infinite;
+}
+
+/* Status Dots */
+.wing-content--fire .status-dot {
+    background: #00f0ff;
+    box-shadow: 0 0 8px #00f0ff;
+}
+
+.wing-content--climate .status-dot {
+    background: #22c55e;
+    box-shadow: 0 0 8px #22c55e;
+}
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+/* ==================== ACTIVITIES - GEN-Z BENTO STYLE ==================== */
+.wing-activities-section {
+    margin-bottom: 80px;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Modern Glassmorphism Activity Card */
+.activity-card {
+    position: relative;
+    display: flex;
+    gap: 16px;
+    padding: 24px;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+/* Gradient border effect on hover */
+.activity-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(135deg, transparent 0%, transparent 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.wing-content--fire .activity-card:hover::before {
+    background: linear-gradient(135deg, #00f0ff 0%, #a855f7 50%, #00d4ff 100%);
+    opacity: 1;
+}
+
+.wing-content--fire .activity-card:hover {
+    transform: translateY(-4px);
+    background: linear-gradient(135deg,
+            rgba(0, 240, 255, 0.05) 0%,
+            rgba(168, 85, 247, 0.03) 100%);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 60px rgba(0, 240, 255, 0.1);
+}
+
+.wing-content--climate .activity-card:hover::before {
+    background: linear-gradient(135deg, #10b981 0%, #22c55e 50%, #14b8a6 100%);
+    opacity: 1;
+}
+
+.wing-content--climate .activity-card:hover {
+    transform: translateY(-4px);
+    background: linear-gradient(135deg,
+            rgba(16, 185, 129, 0.05) 0%,
+            rgba(34, 197, 94, 0.03) 100%);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 60px rgba(16, 185, 129, 0.1);
+}
+
+/* Icon Container */
+.activity-icon-wrap {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.wing-content--fire .activity-icon-wrap {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.15) 0%, rgba(168, 85, 247, 0.1) 100%);
+    color: #00f0ff;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.wing-content--fire .activity-card:hover .activity-icon-wrap {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.25) 0%, rgba(168, 85, 247, 0.15) 100%);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.wing-content--climate .activity-icon-wrap {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(34, 197, 94, 0.1) 100%);
+    color: #22c55e;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.wing-content--climate .activity-card:hover .activity-icon-wrap {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.25) 0%, rgba(34, 197, 94, 0.15) 100%);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+    transform: scale(1.05);
+}
+
+/* Activity Text */
+.activity-info h4 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+}
+
+.activity-info p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.6;
+}
+
+/* ==================== GALLERY ==================== */
+.wing-gallery-section {
+    margin-bottom: 80px;
+}
+
+/* ==================== CTA ==================== */
+.wing-cta-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 32px;
+    border-radius: 20px;
+    flex-wrap: wrap;
+}
+
+.wing-content--fire .wing-cta-section {
+    background: linear-gradient(135deg, rgba(255, 69, 0, 0.1) 0%, rgba(255, 165, 0, 0.05) 100%);
+    border: 1px solid rgba(255, 69, 0, 0.2);
+}
+
+.wing-content--climate .wing-cta-section {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.wing-cta-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.wing-cta-content p {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.wing-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 700;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wing-content--fire .wing-cta-btn {
+    background: linear-gradient(135deg, #ff4500 0%, #ff6b35 100%);
+    box-shadow: 0 4px 20px rgba(255, 69, 0, 0.4);
+}
+
+.wing-content--fire .wing-cta-btn:hover {
+    box-shadow: 0 6px 30px rgba(255, 69, 0, 0.6);
+    transform: translateY(-2px);
+}
+
+.wing-content--climate .wing-cta-btn {
+    background: linear-gradient(135deg, #10b981 0%, #22c55e 100%);
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+}
+
+.wing-content--climate .wing-cta-btn:hover {
+    box-shadow: 0 6px 30px rgba(16, 185, 129, 0.6);
+    transform: translateY(-2px);
+}
+
+/* ==================== MOBILE ==================== */
+@media (max-width: 640px) {
+    .coordinators-grid {
+        gap: 24px;
+    }
+
+    .coord-card-epic {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .wing-cta-section {
+        flex-direction: column;
+        text-align: center;
+    }
+}

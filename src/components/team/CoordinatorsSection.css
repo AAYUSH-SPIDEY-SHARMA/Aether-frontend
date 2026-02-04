@@ -1,0 +1,380 @@
+/* CoordinatorsSection.css - Epic Purple/Pink Neon Theme */
+
+.coordinators-section {
+    padding: var(--space-16) 0;
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Glow Effect */
+.coordinators-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse 60% 40% at 50% 0%, rgba(168, 85, 247, 0.08), transparent),
+        radial-gradient(ellipse 40% 30% at 80% 80%, rgba(236, 72, 153, 0.05), transparent);
+    pointer-events: none;
+}
+
+.coordinators-section .section-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+    position: relative;
+}
+
+.coordinators-section .section-title {
+    margin-bottom: var(--space-3);
+}
+
+.text-gradient-purple {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f472b6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.coordinators-section .section-subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.coordinators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-8);
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+/* Epic HUD-Style Card */
+.coord-card-epic {
+    position: relative;
+    width: 280px;
+    background: rgba(20, 10, 30, 0.9);
+    border: 2px solid rgba(168, 85, 247, 0.3);
+    border-radius: var(--radius-xl);
+    overflow: visible;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow:
+        0 4px 40px rgba(168, 85, 247, 0.15),
+        0 0 60px rgba(236, 72, 153, 0.08),
+        inset 0 0 30px rgba(168, 85, 247, 0.03);
+}
+
+.coord-card-epic:hover {
+    border-color: rgba(168, 85, 247, 0.6);
+    transform: translateY(-8px);
+    box-shadow:
+        0 12px 60px rgba(168, 85, 247, 0.3),
+        0 0 80px rgba(236, 72, 153, 0.15),
+        inset 0 0 40px rgba(168, 85, 247, 0.05);
+}
+
+/* HUD Frame Corners */
+.coord-hud-frame {
+    position: absolute;
+    inset: 8px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.hud-corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-style: solid;
+    border-width: 2px;
+    opacity: 0.6;
+    border-color: #a855f7;
+    transition: all 0.3s ease;
+}
+
+.coord-card-epic:hover .hud-corner {
+    opacity: 1;
+    border-color: #ec4899;
+}
+
+.hud-corner--tl {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 8px 0 0 0;
+}
+
+.hud-corner--tr {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 0 8px 0 0;
+}
+
+.hud-corner--bl {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+    border-radius: 0 0 0 8px;
+}
+
+.hud-corner--br {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 8px 0;
+}
+
+/* Status Badge */
+.coord-status-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: rgba(20, 10, 30, 0.85);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    border-radius: var(--radius-full);
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #a855f7;
+    backdrop-filter: blur(8px);
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background: #a855f7;
+    border-radius: 50%;
+    animation: statusPulse 2s ease-in-out infinite;
+    box-shadow: 0 0 8px #a855f7;
+}
+
+/* Badge variants for different roles */
+.badge-aether {
+    color: #ec4899;
+    border-color: rgba(236, 72, 153, 0.5);
+}
+
+.badge-aether .status-dot {
+    background: #ec4899;
+    box-shadow: 0 0 8px #ec4899;
+}
+
+.badge-wnc {
+    color: #00d4ff;
+    border-color: rgba(0, 212, 255, 0.5);
+}
+
+.badge-wnc .status-dot {
+    background: #00d4ff;
+    box-shadow: 0 0 8px #00d4ff;
+}
+
+.badge-cro {
+    color: #10b981;
+    border-color: rgba(16, 185, 129, 0.5);
+}
+
+.badge-cro .status-dot {
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+}
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(0.8);
+    }
+}
+
+/* Image Area */
+.coord-image-area {
+    position: relative;
+    width: 280px;
+    height: 336px;
+    /* Fixed profile crop frame (5:6 ratio) */
+    overflow: hidden;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.coord-image-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(168, 85, 247, 0.05) 0%,
+            transparent 50%);
+}
+
+.image-scanline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #a855f7, transparent);
+    opacity: 0.4;
+    animation: scanDown 4s linear infinite;
+}
+
+@keyframes scanDown {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.4;
+    }
+
+    90% {
+        opacity: 0.4;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+.coord-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Hover effect removed - conflicts with crop transform */
+
+/* Avatar Fallback */
+.coord-avatar-large {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #fff;
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f472b6 100%);
+    box-shadow: 0 0 50px rgba(168, 85, 247, 0.5);
+    transition: all 0.4s ease;
+}
+
+.coord-card-epic:hover .coord-avatar-large {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 70px rgba(236, 72, 153, 0.6);
+}
+
+/* Data Panel */
+.coord-data-panel {
+    position: relative;
+    padding: 16px 20px;
+    text-align: center;
+    background: rgba(10, 5, 15, 0.6);
+    border-top: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.coord-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+}
+
+.coord-role-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    border-radius: var(--radius-full);
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #ec4899;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+/* Social Icons */
+.coord-socials {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 8px;
+    color: #a855f7;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: rgba(236, 72, 153, 0.2);
+    border-color: #ec4899;
+    color: #ec4899;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+}
+
+/* Responsive */
+/* ==================== RESPONSIVE SCALING ==================== */
+@media (max-width: 900px) {
+    .coordinators-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .coord-card-epic {
+        transform: scale(0.9);
+        transform-origin: top center;
+    }
+}
+
+@media (max-width: 375px) {
+    .coord-card-epic {
+        transform: scale(0.82);
+        transform-origin: top center;
+    }
+}

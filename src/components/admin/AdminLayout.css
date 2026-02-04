@@ -1,0 +1,255 @@
+/* Admin Layout & Sidebar Styles */
+
+/* ==================== LAYOUT ==================== */
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a14 0%, #0d0d1a 50%, #0a0a14 100%);
+}
+
+.admin-main {
+    flex: 1;
+    margin-left: 260px;
+    transition: margin-left 0.3s ease;
+}
+
+.admin-layout.sidebar-collapsed .admin-main {
+    margin-left: 72px;
+}
+
+/* ==================== SIDEBAR ==================== */
+.admin-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 260px;
+    background: rgba(12, 12, 20, 0.95);
+    border-right: 1px solid rgba(0, 212, 255, 0.1);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    transition: width 0.3s ease;
+}
+
+.admin-sidebar.collapsed {
+    width: 72px;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #00d4ff 0%, #a855f7 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.05em;
+}
+
+.logo-badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #00d4ff;
+    letter-spacing: 0.1em;
+}
+
+.sidebar-toggle {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.sidebar-toggle:hover {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.3);
+    color: #00d4ff;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+    flex: 1;
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow-y: auto;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+}
+
+.sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.sidebar-link.active {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(168, 85, 247, 0.1) 100%);
+    color: #00d4ff;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.sidebar-link.active svg {
+    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.5));
+}
+
+.admin-sidebar.collapsed .sidebar-link {
+    justify-content: center;
+    padding: 12px;
+}
+
+.admin-sidebar.collapsed .sidebar-link span {
+    display: none;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+    padding: 16px 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logout-btn:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+/* ==================== TOPBAR ==================== */
+.admin-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 32px;
+    background: rgba(12, 12, 20, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.topbar-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.topbar-date {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ==================== PAGE CONTENT ==================== */
+.admin-page-content {
+    padding: 32px;
+    min-height: calc(100vh - 80px);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+    .admin-sidebar {
+        width: 72px;
+    }
+
+    .admin-sidebar .logo-text,
+    .admin-sidebar .sidebar-link span {
+        display: none;
+    }
+
+    .admin-sidebar .sidebar-link {
+        justify-content: center;
+        padding: 12px;
+    }
+
+    .admin-main {
+        margin-left: 72px;
+    }
+
+    .sidebar-toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-sidebar {
+        transform: translateX(-100%);
+    }
+
+    .admin-main {
+        margin-left: 0;
+    }
+
+    .admin-page-content {
+        padding: 16px;
+    }
+
+    .admin-topbar {
+        padding: 16px;
+    }
+}

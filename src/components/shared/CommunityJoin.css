@@ -1,0 +1,296 @@
+/* CommunityJoin.css - Blue/Purple/Pink Neon with Good Contrast */
+
+.community-section {
+    background: var(--bg-primary);
+}
+
+.command-center {
+    position: relative;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-12) var(--space-8);
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .command-center {
+        padding: var(--space-16) var(--space-12);
+    }
+}
+
+/* Background Grid Pattern */
+.command-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 240, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+}
+
+/* Connection Lines SVG */
+.connection-lines {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 60px;
+    transform: translateY(-50%);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.connection-path {
+    stroke-dasharray: 8 4;
+    animation: dashFlow 20s linear infinite;
+}
+
+@keyframes dashFlow {
+    0% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: -100;
+    }
+}
+
+/* Content */
+.command-content {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.command-content .section-label {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: var(--space-4);
+}
+
+.command-content .section-title {
+    margin-bottom: var(--space-4);
+}
+
+.command-description {
+    color: var(--text-secondary);
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    margin-bottom: var(--space-10);
+}
+
+/* Channel Grid */
+.channel-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+    .channel-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .channel-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Channel Button */
+.channel-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Color Variants */
+.channel-discord {
+    background: rgba(88, 101, 242, 0.1);
+    border: 1px solid rgba(88, 101, 242, 0.2);
+    color: #5865f2;
+}
+
+.channel-discord:hover {
+    background: rgba(88, 101, 242, 0.2);
+    border-color: #5865f2;
+    box-shadow: 0 0 30px rgba(88, 101, 242, 0.2);
+    transform: translateY(-3px);
+}
+
+.channel-whatsapp {
+    background: rgba(37, 211, 102, 0.1);
+    border: 1px solid rgba(37, 211, 102, 0.2);
+    color: #25d366;
+}
+
+.channel-whatsapp:hover {
+    background: rgba(37, 211, 102, 0.2);
+    border-color: #25d366;
+    box-shadow: 0 0 30px rgba(37, 211, 102, 0.2);
+    transform: translateY(-3px);
+}
+
+.channel-linkedin {
+    background: rgba(10, 102, 194, 0.1);
+    border: 1px solid rgba(10, 102, 194, 0.2);
+    color: #0a66c2;
+}
+
+.channel-linkedin:hover {
+    background: rgba(10, 102, 194, 0.2);
+    border-color: #0a66c2;
+    box-shadow: 0 0 30px rgba(10, 102, 194, 0.2);
+    transform: translateY(-3px);
+}
+
+.channel-email {
+    background: rgba(0, 240, 255, 0.1);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    color: var(--accent-cyan);
+}
+
+.channel-email:hover {
+    background: rgba(0, 240, 255, 0.2);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Pulse Indicator */
+.channel-pulse {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.channel-btn:hover .channel-pulse {
+    opacity: 1;
+    animation: pulseGlow 1.5s ease-in-out infinite;
+}
+
+.channel-discord .channel-pulse {
+    background: #5865f2;
+}
+
+.channel-whatsapp .channel-pulse {
+    background: #25d366;
+}
+
+.channel-linkedin .channel-pulse {
+    background: #0a66c2;
+}
+
+.channel-email .channel-pulse {
+    background: var(--accent-cyan);
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 currentColor;
+        opacity: 1;
+    }
+
+    50% {
+        box-shadow: 0 0 0 6px transparent;
+        opacity: 0.7;
+    }
+}
+
+/* Ripple Effect */
+.channel-ripple {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%) scale(0);
+    animation: rippleEffect 0.6s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes rippleEffect {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(4);
+        opacity: 0;
+    }
+}
+
+/* Icon */
+.channel-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Text */
+.channel-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.channel-label {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+}
+
+.channel-sublabel {
+    font-size: var(--text-xs);
+    opacity: 0.7;
+}
+
+/* External Icon */
+.channel-external {
+    opacity: 0.5;
+    flex-shrink: 0;
+    transition: opacity 0.3s ease;
+}
+
+.channel-btn:hover .channel-external {
+    opacity: 1;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .connection-path,
+    .channel-pulse,
+    .channel-ripple {
+        animation: none;
+    }
+
+    .channel-btn:hover .channel-pulse {
+        opacity: 1;
+    }
+}

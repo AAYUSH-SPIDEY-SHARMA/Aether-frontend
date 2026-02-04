@@ -1,0 +1,73 @@
+/* ================================================
+   SPONSORS - SIMPLE GRID (No Tier Labels)
+   ================================================ */
+
+.symposium-sponsors {
+    padding: 100px 0;
+    position: relative;
+}
+
+/* Sponsors Grid */
+.sponsors-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Sponsor Card */
+.sponsor-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 36px;
+    background: linear-gradient(135deg,
+            rgba(15, 15, 25, 0.6) 0%,
+            rgba(20, 20, 35, 0.4) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.sponsor-card:hover {
+    border-color: rgba(168, 85, 247, 0.4);
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.15);
+}
+
+.sponsor-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+}
+
+.sponsor-card:hover .sponsor-name {
+    color: #fff;
+}
+
+/* CTA Section */
+.sponsor-cta {
+    text-align: center;
+    margin-top: 48px;
+}
+
+.sponsor-cta p {
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .sponsor-card {
+        padding: 16px 24px;
+    }
+
+    .sponsor-name {
+        font-size: 0.95rem;
+    }
+}

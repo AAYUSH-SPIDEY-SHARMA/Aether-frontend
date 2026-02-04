@@ -1,0 +1,379 @@
+/* ================================================
+   WINGS PAGE - MODERN GEN-Z AESTHETIC
+   Gradient mesh, floating orbs, glassmorphism
+   ================================================ */
+
+/* ==================== PAGE BASE ==================== */
+.wings-page {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    transition: background 0.6s ease;
+}
+
+/* ==================== FIRE THEME (WnC) - NOW CYBER THEME ==================== */
+.wings-page--fire {
+    background:
+        radial-gradient(ellipse 80% 50% at 20% 40%, rgba(0, 240, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 50% at 50% 80%, rgba(0, 212, 255, 0.06) 0%, transparent 40%),
+        linear-gradient(180deg,
+            #05080f 0%,
+            #0a0e1a 30%,
+            #080c16 60%,
+            #050810 100%);
+}
+
+.wings-page--fire .text-gradient {
+    background: linear-gradient(135deg, #00f0ff 0%, #a855f7 50%, #00d4ff 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: cyberGradient 4s ease infinite;
+}
+
+@keyframes cyberGradient {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.wings-page--fire .wings-label {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(168, 85, 247, 0.08) 100%);
+    border-color: rgba(0, 240, 255, 0.4);
+    color: #00f0ff;
+    backdrop-filter: blur(8px);
+}
+
+/* ==================== CLIMATE THEME ==================== */
+.wings-page--climate {
+    background:
+        radial-gradient(ellipse 80% 50% at 20% 40%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 80% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
+        linear-gradient(180deg,
+            #050a08 0%,
+            #081a14 30%,
+            #050f0a 100%);
+}
+
+.wings-page--climate .text-gradient {
+    background: linear-gradient(135deg, #10b981 0%, #22c55e 40%, #14b8a6 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: climateGradient 4s ease infinite;
+}
+
+@keyframes climateGradient {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.wings-page--climate .wings-label {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(34, 197, 94, 0.1) 100%);
+    border-color: rgba(16, 185, 129, 0.4);
+    color: #22c55e;
+}
+
+/* ==================== BACKGROUND EFFECTS ==================== */
+.wings-bg-effects {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.wings-bg-gradient {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 240, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.02) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+}
+
+/* Floating Orb Effects - Modern Gen-Z Style */
+.fire-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            rgba(0, 240, 255, 0.15) 0%,
+            rgba(168, 85, 247, 0.08) 40%,
+            transparent 70%);
+    filter: blur(80px);
+    animation: orbFloat 15s ease-in-out infinite;
+    top: 10%;
+    left: -10%;
+}
+
+@keyframes orbFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.6;
+    }
+
+    33% {
+        transform: translate(50px, 30px) scale(1.1);
+        opacity: 0.8;
+    }
+
+    66% {
+        transform: translate(-20px, -40px) scale(0.95);
+        opacity: 0.7;
+    }
+}
+
+/* Floating Particles - Cyan Glow */
+.fire-ember {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #00f0ff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00f0ff, 0 0 20px rgba(168, 85, 247, 0.5);
+    animation: particleFloat 10s ease-in-out infinite;
+}
+
+.fire-ember--1 {
+    left: 20%;
+    bottom: 10%;
+    animation-delay: 0s;
+}
+
+.fire-ember--2 {
+    left: 50%;
+    bottom: 5%;
+    animation-delay: 3s;
+}
+
+.fire-ember--3 {
+    left: 80%;
+    bottom: 15%;
+    animation-delay: 6s;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-500px) scale(0.3);
+        opacity: 0;
+    }
+}
+
+/* Climate Effects */
+.nature-glow {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 400px;
+    background: radial-gradient(ellipse 80% 50% at 50% 0%,
+            rgba(16, 185, 129, 0.1) 0%,
+            rgba(34, 197, 94, 0.05) 30%,
+            transparent 60%);
+    animation: natureGlow 5s ease-in-out infinite;
+}
+
+@keyframes natureGlow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.leaf-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(45deg);
+    animation: leafFall 12s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+.leaf-particle--1 {
+    left: 15%;
+    top: -20px;
+    animation-delay: 0s;
+}
+
+.leaf-particle--2 {
+    left: 45%;
+    top: -20px;
+    animation-delay: 3s;
+}
+
+.leaf-particle--3 {
+    left: 75%;
+    top: -20px;
+    animation-delay: 6s;
+}
+
+@keyframes leafFall {
+    0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.6;
+    }
+
+    90% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(225deg);
+        opacity: 0;
+    }
+}
+
+/* ==================== HERO ==================== */
+.wings-hero {
+    position: relative;
+    padding: 140px 0 80px;
+    z-index: 1;
+}
+
+.wings-hero-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.wings-label {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 1px solid;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 24px;
+}
+
+.wings-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+.wings-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.5);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* ==================== CONTENT SECTION ==================== */
+.wings-content-section {
+    position: relative;
+    padding: 40px 0 100px;
+    z-index: 1;
+}
+
+/* ==================== FLOATING SIDEBAR ==================== */
+.wings-floating-sidebar {
+    position: fixed;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+}
+
+.floating-wing-btn {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 10, 20, 0.8);
+    backdrop-filter: blur(12px);
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.floating-wing-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Cyber Button (WnC) */
+.floating-wing-btn--fire:hover,
+.floating-wing-btn--fire.floating-wing-btn--active {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.2) 0%, rgba(168, 85, 247, 0.15) 100%);
+    border-color: rgba(0, 240, 255, 0.6);
+    color: #00f0ff;
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.3), 0 0 50px rgba(168, 85, 247, 0.15);
+}
+
+/* Climate Button */
+.floating-wing-btn--climate:hover,
+.floating-wing-btn--climate.floating-wing-btn--active {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(34, 197, 94, 0.15) 100%);
+    border-color: rgba(16, 185, 129, 0.6);
+    color: #22c55e;
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.4);
+}
+
+/* Floating Wing Logo */
+.floating-wing-logo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+/* Mobile - hide floating sidebar */
+@media (max-width: 768px) {
+    .wings-floating-sidebar {
+        display: none;
+    }
+}

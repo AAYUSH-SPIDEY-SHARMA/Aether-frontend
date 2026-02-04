@@ -1,0 +1,139 @@
+/* ImageUpload Component Styles */
+
+.image-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.upload-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.upload-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 32px 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 140px;
+}
+
+.upload-zone:hover {
+    background: rgba(0, 212, 255, 0.05);
+    border-color: rgba(0, 212, 255, 0.3);
+}
+
+.upload-zone.drag-active {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: #00d4ff;
+}
+
+.upload-zone.uploading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.upload-icon {
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.2s ease;
+}
+
+.upload-zone:hover .upload-icon,
+.upload-zone.drag-active .upload-icon {
+    color: #00d4ff;
+}
+
+.upload-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.upload-hint {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.image-preview {
+    position: relative;
+    display: inline-block;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.image-preview img {
+    display: block;
+    max-width: 100%;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.preview-actions {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    gap: 6px;
+}
+
+.crop-btn,
+.remove-btn {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.crop-btn {
+    background: rgba(0, 212, 255, 0.9);
+    color: white;
+}
+
+.crop-btn:hover {
+    background: #00d4ff;
+    transform: scale(1.1);
+}
+
+.remove-btn {
+    background: rgba(255, 59, 48, 0.9);
+    color: white;
+}
+
+.remove-btn:hover {
+    background: #ff3b30;
+    transform: scale(1.1);
+}
+
+.upload-error {
+    font-size: 0.8rem;
+    color: #ff6b6b;
+    margin: 0;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+    color: #00d4ff;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

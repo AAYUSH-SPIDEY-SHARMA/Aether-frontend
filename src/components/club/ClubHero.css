@@ -1,0 +1,198 @@
+.club-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: var(--space-16) 0;
+}
+
+/* Background */
+.club-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+/* Gradient Spotlight - Behind Title */
+.gradient-spotlight {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(ellipse 50% 40% at 50% 50%,
+            rgba(0, 240, 255, 0.08) 0%,
+            rgba(168, 85, 247, 0.05) 40%,
+            transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+}
+
+.glow-orb-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--accent-cyan);
+    top: -200px;
+    left: -100px;
+    animation: floatOrb 20s ease-in-out infinite;
+}
+
+.glow-orb-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--accent-purple);
+    bottom: -150px;
+    right: -100px;
+    animation: floatOrb 15s ease-in-out infinite reverse;
+}
+
+@keyframes floatOrb {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, 20px);
+    }
+}
+
+/* Content */
+.club-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+}
+
+/* Logo Accent - Behind Title */
+.hero-logo-accent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.club-hero-title-wrap {
+    position: relative;
+    margin-bottom: var(--space-6);
+}
+
+.club-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-5);
+    background: var(--accent-cyan-dim);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: var(--radius-full);
+    color: var(--accent-cyan);
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-6);
+}
+
+.club-hero-title {
+    font-size: clamp(4rem, 15vw, 10rem);
+    font-weight: var(--font-black);
+    letter-spacing: 0.1em;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: var(--space-2);
+    text-shadow: 0 0 80px rgba(0, 240, 255, 0.3);
+}
+
+.club-hero-institution {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.club-hero-tagline {
+    font-size: var(--text-xl);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto var(--space-10);
+    line-height: 1.6;
+}
+
+/* Actions */
+.club-hero-actions {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-16);
+}
+
+/* Scroll Indicator */
+.club-scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    animation: scrollBounce 2s infinite;
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .club-hero-title {
+        font-size: 4rem;
+        letter-spacing: 0.05em;
+    }
+
+    .club-hero-institution {
+        font-size: var(--text-base);
+        letter-spacing: 0.15em;
+    }
+
+    .club-hero-tagline {
+        font-size: var(--text-lg);
+    }
+
+    .club-hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-logo-accent {
+        opacity: 0.08;
+    }
+}

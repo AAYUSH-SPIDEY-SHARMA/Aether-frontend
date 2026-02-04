@@ -1,0 +1,120 @@
+.sponsors-page {
+    min-height: 100vh;
+}
+
+.sponsors-hero {
+    padding: var(--space-16) 0 var(--space-8);
+    text-align: center;
+    background:
+        radial-gradient(ellipse 60% 40% at 50% 0%, rgba(168, 85, 247, 0.1), transparent);
+}
+
+.sponsors-display {
+    background: var(--bg-primary);
+}
+
+.sponsor-tier {
+    margin-bottom: var(--space-12);
+}
+
+.tier-label {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: var(--font-medium);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-align: center;
+    margin-bottom: var(--space-6);
+}
+
+.sponsors-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-6);
+}
+
+.sponsor-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+.sponsor-card:hover {
+    border-color: var(--border-accent);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow-cyan);
+}
+
+.sponsor-name {
+    font-family: var(--font-display);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+}
+
+.sponsor-link {
+    font-size: var(--text-xs);
+    color: var(--accent-cyan);
+}
+
+/* Title Sponsor */
+.sponsor-card-title {
+    width: 320px;
+    height: 160px;
+    font-size: var(--text-2xl);
+    border: 2px solid var(--accent-cyan);
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+}
+
+/* Platinum */
+.sponsor-card-platinum {
+    width: 220px;
+    height: 100px;
+    font-size: var(--text-xl);
+}
+
+/* Gold */
+.sponsor-card-gold {
+    width: 180px;
+    height: 80px;
+    font-size: var(--text-lg);
+}
+
+/* Silver */
+.sponsor-card-silver {
+    width: 150px;
+    height: 65px;
+    font-size: var(--text-base);
+}
+
+/* CTA Section */
+.sponsor-cta-section {
+    text-align: center;
+    padding: var(--space-12);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.sponsor-cta-section h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.sponsor-cta-section p {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+}

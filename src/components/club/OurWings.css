@@ -1,0 +1,283 @@
+/* OurWings.css - Blue/Purple/Pink Neon with Good Contrast */
+
+.our-wings {
+    background: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background glow */
+.our-wings::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 40% 40% at 30% 30%, rgba(0, 240, 255, 0.04), transparent),
+        radial-gradient(ellipse 40% 40% at 70% 70%, rgba(168, 85, 247, 0.03), transparent);
+    pointer-events: none;
+}
+
+.our-wings .section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--space-12);
+    position: relative;
+}
+
+.our-wings .section-label {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: var(--space-4);
+    padding: var(--space-2) var(--space-4);
+    background: rgba(0, 240, 255, 0.1);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: var(--radius-full);
+}
+
+.our-wings .section-description {
+    color: var(--text-secondary);
+    font-size: var(--text-lg);
+    line-height: 1.7;
+}
+
+/* Wings Grid */
+.wings-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .wings-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Wing Card */
+.wing-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-8);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 640px) {
+    .wing-card {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: var(--space-6);
+    }
+}
+
+/* Animated Border Sweep */
+.wing-border-sweep {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-xl);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.wing-border-sweep::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--accent-cyan),
+            var(--accent-purple),
+            transparent);
+    background-size: 200% 100%;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: borderSweep 3s linear infinite;
+    animation-play-state: paused;
+}
+
+.wing-card:hover .wing-border-sweep {
+    opacity: 1;
+}
+
+.wing-card:hover .wing-border-sweep::before {
+    animation-play-state: running;
+}
+
+@keyframes borderSweep {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Glow Effect */
+.wing-glow {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.wing-cyan .wing-glow {
+    background: radial-gradient(ellipse at top left,
+            rgba(0, 240, 255, 0.08),
+            transparent 60%);
+}
+
+.wing-green .wing-glow {
+    background: radial-gradient(ellipse at top left,
+            rgba(16, 185, 129, 0.08),
+            transparent 60%);
+}
+
+.wing-card:hover .wing-glow {
+    opacity: 1;
+}
+
+/* Hover States */
+.wing-card:hover {
+    transform: translateY(-6px);
+}
+
+.wing-cyan:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 20px 50px rgba(0, 240, 255, 0.15);
+}
+
+.wing-green:hover {
+    border-color: #10b981;
+    box-shadow: 0 20px 50px rgba(16, 185, 129, 0.15);
+}
+
+/* Logo */
+.wing-logo {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+    position: relative;
+    z-index: 1;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3);
+}
+
+@media (min-width: 640px) {
+    .wing-logo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 0;
+    }
+}
+
+.wing-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.wing-cyan .wing-logo img {
+    filter: drop-shadow(0 4px 20px rgba(0, 240, 255, 0.2));
+}
+
+.wing-green .wing-logo img {
+    filter: drop-shadow(0 4px 20px rgba(16, 185, 129, 0.2));
+}
+
+.wing-card:hover .wing-logo img {
+    transform: scale(1.08);
+}
+
+/* Content */
+.wing-content {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.wing-name {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.wing-description {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-3);
+}
+
+/* Focus Areas */
+.wing-focus {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+    font-style: italic;
+}
+
+/* CTA */
+.wing-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.wing-cyan .wing-cta {
+    color: var(--accent-cyan);
+}
+
+.wing-green .wing-cta {
+    color: #10b981;
+}
+
+.wing-card:hover .wing-cta {
+    gap: var(--space-3);
+}
+
+.wing-cta svg {
+    transition: transform 0.3s ease;
+}
+
+.wing-card:hover .wing-cta svg {
+    transform: translateX(4px);
+}

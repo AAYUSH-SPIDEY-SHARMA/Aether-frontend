@@ -1,0 +1,140 @@
+/* ================================================
+   WING SELECTOR - EPIC THEMED BUTTONS
+   Fire glow for WnC, Green glow for Climate
+   ================================================ */
+
+.wing-selector {
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.wing-selector-container {
+    display: flex;
+    gap: 16px;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+}
+
+/* Button Base */
+.wing-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.wing-btn:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.wing-btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+}
+
+.wing-logo-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Fire Theme Button */
+.wing-btn--fire.wing-btn--active {
+    background: linear-gradient(135deg, rgba(255, 69, 0, 0.2) 0%, rgba(255, 165, 0, 0.1) 100%);
+    border-color: rgba(255, 69, 0, 0.5);
+    color: #ff6b35;
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.3);
+}
+
+.wing-btn--fire:hover:not(.wing-btn--active) {
+    border-color: rgba(255, 69, 0, 0.3);
+    color: #ff6b35;
+}
+
+.wing-btn--fire .wing-btn-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255, 69, 0, 0.15) 0%, transparent 70%);
+    animation: fireButtonGlow 2s ease-in-out infinite;
+}
+
+@keyframes fireButtonGlow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Climate Theme Button */
+.wing-btn--climate.wing-btn--active {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(34, 197, 94, 0.1) 100%);
+    border-color: rgba(16, 185, 129, 0.5);
+    color: #22c55e;
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+}
+
+.wing-btn--climate:hover:not(.wing-btn--active) {
+    border-color: rgba(16, 185, 129, 0.3);
+    color: #22c55e;
+}
+
+.wing-btn--climate .wing-btn-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+    animation: climateButtonGlow 2s ease-in-out infinite;
+}
+
+@keyframes climateButtonGlow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .wing-btn {
+        padding: 12px 16px;
+        font-size: 12px;
+    }
+
+    .wing-btn-text {
+        display: none;
+    }
+
+    .wing-btn-icon {
+        margin: 0;
+    }
+}

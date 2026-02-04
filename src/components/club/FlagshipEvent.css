@@ -1,0 +1,202 @@
+/* FlagshipEvent.css - Blue/Purple/Pink Neon with Good Contrast */
+
+.flagship-event {
+    background: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.flagship-event::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 50% 50% at 0% 50%, rgba(168, 85, 247, 0.08), transparent),
+        radial-gradient(ellipse 50% 50% at 100% 50%, rgba(0, 240, 255, 0.06), transparent);
+    pointer-events: none;
+}
+
+.flagship-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .flagship-content {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+/* Badge with pulse animation */
+.flagship-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: var(--accent-purple-dim);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: var(--radius-full);
+    color: var(--accent-purple);
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-4);
+    animation: badgePulse 3s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 20px 4px rgba(168, 85, 247, 0.2);
+    }
+}
+
+.flagship-title {
+    margin-bottom: var(--space-4);
+}
+
+.flagship-desc {
+    color: var(--text-secondary);
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    margin-bottom: var(--space-6);
+    max-width: 500px;
+}
+
+.flagship-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+    margin-bottom: var(--space-6);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+}
+
+.meta-item svg {
+    color: var(--accent-cyan);
+}
+
+.flagship-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+/* Countdown - Enhanced with glow */
+.flagship-countdown {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-accent);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle glow effect */
+.flagship-countdown::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center,
+            rgba(0, 240, 255, 0.05) 0%,
+            transparent 50%);
+    animation: countdownGlow 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes countdownGlow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+.countdown-label {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-6);
+    position: relative;
+}
+
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+    position: relative;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.countdown-value {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--accent-cyan);
+    position: relative;
+}
+
+.countdown-unit {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.countdown-expired {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--accent-cyan);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+    .countdown-value {
+        font-size: var(--text-2xl);
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .flagship-badge,
+    .countdown-value,
+    .flagship-countdown::before {
+        animation: none;
+    }
+}

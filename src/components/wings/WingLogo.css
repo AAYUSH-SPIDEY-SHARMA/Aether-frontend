@@ -1,0 +1,28 @@
+/* WingLogo Styles */
+
+.wing-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.wing-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Fallback styling when image fails */
+.logo-fallback {
+    background: var(--accent-gradient);
+    border-radius: var(--radius-md);
+}
+
+.logo-fallback::after {
+    content: '⬡';
+    font-size: 60%;
+    color: var(--bg-primary);
+}

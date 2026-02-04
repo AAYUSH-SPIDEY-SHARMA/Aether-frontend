@@ -1,0 +1,317 @@
+/* TeamMemberCard.css - Epic Purple/Pink Neon Theme (Compact) */
+
+.member-card-epic {
+    position: relative;
+    width: 200px;
+    flex-shrink: 0;
+    background: rgba(20, 10, 30, 0.9);
+    border: 2px solid rgba(168, 85, 247, 0.25);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow:
+        0 4px 30px rgba(168, 85, 247, 0.1),
+        inset 0 0 20px rgba(168, 85, 247, 0.02);
+}
+
+.member-card-epic:hover {
+    border-color: rgba(168, 85, 247, 0.5);
+    transform: translateY(-6px);
+    box-shadow:
+        0 12px 40px rgba(168, 85, 247, 0.2),
+        0 0 50px rgba(236, 72, 153, 0.08);
+}
+
+/* Highlighted Card */
+.member-card-epic.highlighted {
+    border-color: rgba(236, 72, 153, 0.35);
+}
+
+.member-card-epic.highlighted:hover {
+    border-color: rgba(236, 72, 153, 0.6);
+    box-shadow:
+        0 12px 40px rgba(236, 72, 153, 0.25),
+        0 0 60px rgba(168, 85, 247, 0.1);
+}
+
+/* HUD Frame */
+.member-hud-frame {
+    position: absolute;
+    inset: 6px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.member-card-epic .hud-corner {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-style: solid;
+    border-width: 2px;
+    opacity: 0.5;
+    border-color: #a855f7;
+    transition: all 0.3s ease;
+}
+
+.member-card-epic:hover .hud-corner {
+    opacity: 1;
+    border-color: #ec4899;
+}
+
+.member-card-epic .hud-corner--tl {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 5px 0 0 0;
+}
+
+.member-card-epic .hud-corner--tr {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 0 5px 0 0;
+}
+
+.member-card-epic .hud-corner--bl {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+    border-radius: 0 0 0 5px;
+}
+
+.member-card-epic .hud-corner--br {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 5px 0;
+}
+
+/* Status Badge */
+.member-status-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    background: rgba(20, 10, 30, 0.85);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    border-radius: var(--radius-full);
+    font-family: var(--font-display);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #a855f7;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+}
+
+.member-status-badge .status-dot {
+    width: 5px;
+    height: 5px;
+    background: #a855f7;
+    border-radius: 50%;
+    animation: statusPulse 2s ease-in-out infinite;
+    box-shadow: 0 0 6px #a855f7;
+}
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(0.8);
+    }
+}
+
+/* Image Area */
+.member-image-area {
+    position: relative;
+    width: 200px;
+    height: 240px;
+    /* Fixed profile crop frame (5:6 ratio) */
+    overflow: hidden;
+}
+
+.member-image-area .image-scanline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #a855f7, transparent);
+    opacity: 0.3;
+    animation: scanDown 5s linear infinite;
+    z-index: 2;
+}
+
+@keyframes scanDown {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.3;
+    }
+
+    90% {
+        opacity: 0.3;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+.member-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.member-card-epic:hover .member-image {
+    transform: scale(1.08);
+}
+
+/* Avatar Fallback */
+.member-avatar-large {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #fff;
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f472b6 100%);
+    box-shadow: 0 0 35px rgba(168, 85, 247, 0.5);
+    transition: all 0.4s ease;
+}
+
+.member-card-epic:hover .member-avatar-large {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 50px rgba(236, 72, 153, 0.6);
+}
+
+/* Data Panel */
+.member-data-panel {
+    padding: 8px 10px;
+    text-align: center;
+    background: rgba(10, 5, 15, 0.5);
+    border-top: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+.member-name {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 6px 0;
+    letter-spacing: 0.02em;
+}
+
+/* Role Badge */
+.member-role-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: var(--radius-full);
+    font-family: var(--font-display);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #a855f7;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.member-card-epic.highlighted .member-role-badge {
+    background: rgba(236, 72, 153, 0.15);
+    border-color: rgba(236, 72, 153, 0.4);
+    color: #ec4899;
+}
+
+/* Highlight Tag */
+.member-highlight-tag {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 9px;
+    font-weight: 700;
+    color: #fbbf24;
+    padding: 4px 10px;
+    background: rgba(251, 191, 36, 0.15);
+    border: 1px solid rgba(251, 191, 36, 0.4);
+    border-radius: var(--radius-full);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* Social Icons */
+.member-socials {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.member-socials a {
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(168, 85, 247, 0.08);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    border-radius: 5px;
+    color: #a855f7;
+    transition: all 0.3s ease;
+}
+
+.member-socials a:hover {
+    background: rgba(236, 72, 153, 0.15);
+    border-color: #ec4899;
+    color: #ec4899;
+    transform: translateY(-2px);
+}
+
+/* Symposium Variant */
+.member-card-epic.symposium .member-role-badge {
+    color: #ec4899;
+    background: rgba(236, 72, 153, 0.12);
+    border-color: rgba(236, 72, 153, 0.3);
+}
+
+/* ==================== RESPONSIVE SCALING ==================== */
+@media (max-width: 480px) {
+    .member-card-epic {
+        transform: scale(0.9);
+        transform-origin: top center;
+    }
+}
+
+@media (max-width: 375px) {
+    .member-card-epic {
+        transform: scale(0.85);
+        transform-origin: top center;
+    }
+}

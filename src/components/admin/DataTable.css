@@ -1,0 +1,232 @@
+/* DataTable Styles */
+.data-table-wrapper {
+    background: rgba(12, 12, 20, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.data-table-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px 14px;
+    min-width: 280px;
+}
+
+.search-box svg {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.toolbar-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Table */
+.data-table-container {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.data-table td {
+    padding: 16px 20px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.data-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+    background: rgba(0, 212, 255, 0.03);
+}
+
+.empty-row {
+    text-align: center;
+    padding: 48px 20px !important;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Pagination */
+.data-table-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pagination-info {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination-controls button {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.3);
+    color: #00d4ff;
+}
+
+.pagination-controls button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.pagination-controls span {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    min-width: 60px;
+    text-align: center;
+}
+
+/* Loading State */
+.data-table-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 24px;
+    gap: 16px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.data-table-loading .spinner {
+    animation: spin 1s linear infinite;
+    color: #00d4ff;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.status-badge.success,
+.status-badge.active {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+}
+
+.status-badge.pending {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+}
+
+.status-badge.failed,
+.status-badge.inactive {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.3);
+    color: #00d4ff;
+}
+
+.action-btn.delete:hover {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}

@@ -13,9 +13,9 @@ export default function CoordinatorsSection() {
             try {
                 const res = await teamAPI.getAll();
                 const allMembers = res.data?.data?.members || [];
-                // Filter for all coordinator types and map fields
+                // Filter for club coordinators only (wing coordinators show on Wings page)
                 const coords = allMembers
-                    .filter(m => (m.type === 'CLUB_COORDINATOR' || m.type === 'WING_COORDINATOR') && m.isActive)
+                    .filter(m => m.type === 'CLUB_COORDINATOR' && m.isActive)
                     .map(m => ({
                         id: m.id,
                         name: m.name,

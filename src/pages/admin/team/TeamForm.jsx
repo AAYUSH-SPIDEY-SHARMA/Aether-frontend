@@ -229,6 +229,7 @@ export default function TeamForm() {
                 .form-group { display: flex; flex-direction: column; gap: 8px; }
                 .form-group label { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
                 .form-group input, .form-group select { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px; color: #fff; }
+                .form-group select option { background: #1a1a2e; color: #fff; padding: 10px; }
                 .form-group input:focus, .form-group select:focus { outline: none; border-color: rgba(0,212,255,0.5); }
                 .checkbox-label { display: flex; align-items: center; gap: 10px; cursor: pointer; }
                 .form-actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); }

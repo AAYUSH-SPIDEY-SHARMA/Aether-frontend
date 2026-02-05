@@ -365,6 +365,7 @@ export default function WingForm() {
                 .form-group.full-width { grid-column: 1 / -1; }
                 .form-group label { font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.7); }
                 .form-group input, .form-group textarea, .form-group select { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 14px; color: #fff; font-size: 0.9rem; }
+                .form-group select option { background: #1a1a2e; color: #fff; padding: 10px; }
                 .form-group input:focus, .form-group textarea:focus { outline: none; border-color: rgba(0,212,255,0.5); }
                 .color-input { display: flex; gap: 10px; }
                 .color-input input[type="color"] { width: 48px; height: 42px; border: none; border-radius: 8px; cursor: pointer; }

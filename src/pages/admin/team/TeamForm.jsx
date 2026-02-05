@@ -39,6 +39,7 @@ export default function TeamForm() {
         github: '',
         instagram: '',
         email: '',
+        sortOrder: 0,
         isActive: true
     });
 
@@ -80,6 +81,7 @@ export default function TeamForm() {
                     github: member.github || '',
                     instagram: member.instagram || '',
                     email: member.email || '',
+                    sortOrder: member.sortOrder || 0,
                     isActive: member.isActive ?? true,
                     imageCrop: member.imageCrop || null
                 });
@@ -95,7 +97,7 @@ export default function TeamForm() {
         const { name, value, type, checked } = e.target;
         setFormData(prev => ({
             ...prev,
-            [name]: type === 'checkbox' ? checked : value
+            [name]: type === 'checkbox' ? checked : type === 'number' ? Number(value) : value
         }));
     };
 
@@ -201,6 +203,11 @@ export default function TeamForm() {
                     <div className="form-group">
                         <label>Email</label>
                         <input type="email" name="email" value={formData.email} onChange={handleChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Sort Order</label>
+                        <input type="number" name="sortOrder" value={formData.sortOrder} onChange={handleChange} min="0" placeholder="0" />
+                        <small style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem' }}>Lower numbers appear first</small>
                     </div>
                     <div className="form-group">
                         <label className="checkbox-label">
